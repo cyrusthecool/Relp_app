@@ -1,0 +1,6 @@
+
+<h1><%= @category.name %></h1>
+
+<%= image_tag @category.image, :class => 'feature' unless @category.image.nil? %>
+
+  <p>Details: <%= @category.detail %></p>

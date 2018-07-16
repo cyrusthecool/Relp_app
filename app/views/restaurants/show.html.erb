@@ -1,0 +1,10 @@
+
+<h1><%= @restaurant.name %></h1>
+
+<%= image_tag @restaurant.image, :class => 'feature' unless @restaurant.image.nil? %>
+
+<ul>
+  <li>Website: <%= @restaurant.website %></li>
+  <li>Address: <%= @restaurant.address %></li>
+  <li>Phone: <%= @restaurant.phone %></li>
+</ul>

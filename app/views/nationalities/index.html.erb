@@ -1,0 +1,7 @@
+<h1>All Nationalities</h1>
+
+<% @nationalities.each do |nationality| %>
+  <p>
+    <%= link_to nationality.name, nationality_path(nationality.id) %> 
+
+<% end %>

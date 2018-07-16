@@ -1,0 +1,13 @@
+
+<h1><%= @nationality.name %></h1>
+
+<%= image_tag @nationality.flag_image, :class => 'feature' unless @nationality.flag_image.nil? %>
+
+
+<ul>
+
+  <li>Famous Food: <%= @nationality.famous_food %></li>
+  <li>Food History: <%= @nationality.food_history %></li>
+
+
+</ul>

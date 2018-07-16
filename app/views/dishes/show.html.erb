@@ -1,0 +1,9 @@
+
+<h1><%= @dish.name %></h1>
+
+<%= image_tag @dish.image, :class => 'feature' unless @dish.image.nil? %>
+
+<ul>
+    <li>Category: <%=  @dish.category %></li>
+  
+</ul>
