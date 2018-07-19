@@ -1,11 +1,12 @@
 class RestaurantsController < ApplicationController
-
+  before_action :check_for_login, except: [:index, :show]
   def index
-    @restaurants =Restaurant.all
+    @restaurants = Restaurant.all
   end
 
   def show
     @restaurant = Restaurant.find params[:id]
+        # raise
   end
 
   def new
@@ -34,9 +35,17 @@ class RestaurantsController < ApplicationController
   end
 
   private
-    def restaurant_params
-      # Whitelist of permitted params
-      params.require(:restaurant).permit(:name, :image, :nationality_id, :website, :address, :phone)
-    end
 
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :image, :website, :address, :phone)
   end
+
+def map
+  @restaurant = Restaurant.find params[:id]
+      results = Geocoder.search("#{@restaurant.address}")
+      coordinates = results.first.coordinates
+      @latitude = coordinates.first
+      @longitude = coordinates.last
+end
+
+end

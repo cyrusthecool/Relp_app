@@ -8,3 +8,9 @@
   </p>
 
 <% end %>
+
+<% if @current_user.present? && @current_user.admin? %>
+<div class="controls">
+  <%= link_to "New Restaurant", new_restaurant_path(@restaurant) %>
+</div>
+<% end %>

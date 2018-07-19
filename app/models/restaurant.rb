@@ -17,4 +17,7 @@ class Restaurant < ApplicationRecord
   has_and_belongs_to_many :dishes # habtm
   has_many :categories, :through => :dishes
   # users?
+
+  geocoded_by :address
+  after_validation :geocode if :address_changed?
 end

@@ -1,0 +1,14 @@
+<h1>New Nationality</h1>
+
+<%= form_for @nationality do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name, :autofocus => true %>
+  <%= f.label :"Food History" %>
+  <%= f.text_field :food_history %>
+  <%= f.label :"Famous Food" %>
+  <%= f.text_field :famous_food %>
+  <%= f.label :"Flag" %>
+  <%= f.text_field :flag_image%>
+
+  <%= f.submit %>
+<% end %>

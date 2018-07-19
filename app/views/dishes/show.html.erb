@@ -4,6 +4,20 @@
 <%= image_tag @dish.image, :class => 'feature' unless @dish.image.nil? %>
 
 <ul>
-    <li>Category: <%=  @dish.category %></li>
-  
+    <li>Category: <%=  @dish.category.name %></li>
+
 </ul>
+
+
+<% @dish.restaurants.each do |restaurant| %>
+  <p>
+  <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+  </p>
+<% end %>
+
+<% if @current_user.present? && @current_user.admin? %>
+<div class="controls">
+  <%= link_to "Edit dish", edit_dish_path(@dish) %>
+  <%= link_to "Delete dish", dish_path(@dish), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+</div>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>New Category</h1>
+
+
+<%= form_for @category do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name, :autofocus => true %>
+
+  <%= f.label :Image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :Detail %>
+  <%= f.text_field :detail%>
+
+
+  <%= f.submit %>
+<% end %>

@@ -2,5 +2,13 @@
 
 <% @dishes.each do |dish| %>
   <p>
-  <%= link_to dish.name, dish_path(dish.id) %> 
+  <%= link_to dish.name, dish_path(dish.id) %>
+</p>
+
+<% end %>
+
+<% if @current_user.present? && @current_user.admin? %>
+<div class="controls">
+  <%= link_to "New Dish", new_dish_path(@dish) %>
+</div>
 <% end %>

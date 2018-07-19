@@ -2,6 +2,12 @@
 
 <% @nationalities.each do |nationality| %>
   <p>
-    <%= link_to nationality.name, nationality_path(nationality.id) %> 
+    <%= link_to nationality.name, nationality_path(nationality.id) %>
 
+<% end %>
+
+<% if @current_user.present? && @current_user.admin? %>
+<div class="controls">
+  <%= link_to "New Nationality", new_nationality_path(@nationality) %>
+</div>
 <% end %>

@@ -1,15 +1,13 @@
 class CategoriesController < ApplicationController
   def index
-      @categories =Category.all
+    @categories = Category.all
   end
-
 
   def show
     @category = Category.find params[:id]
   end
 
-
-def new
+  def new
     @category = Category.new
   end
 
@@ -35,8 +33,10 @@ def new
   end
 
   private
+
   def category_params
-    # Whitelist of permitted params
-    params.require(:category).permit(:name, :image, :detail)
+    params.require(:category).permit(:name, :detail)
   end
+
+
 end

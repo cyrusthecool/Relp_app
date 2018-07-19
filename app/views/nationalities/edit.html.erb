@@ -1,0 +1,16 @@
+<h1>Edit Nationality</h1>
+
+<%= form_for(@nationality, :html => {:multipart => true}) do |f| %>
+<div class="form-group">
+  <%= f.label :name%>
+  <%= f.text_field :name, class: "form-control"%>
+  <br>
+  <%= f.label :food_history%>
+  <%= f.text_field :food_history, class: "form-control"%>
+  <br>
+  <%= f.label :famous_food%>
+  <%= f.text_field :famous_food, class: "form-control"%>
+  <br>
+  <%= f.submit class:"btn btn-primary"%>
+<% end %>
+</div>

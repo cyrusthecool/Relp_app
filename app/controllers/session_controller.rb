@@ -6,6 +6,8 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
+      puts "!!!" * 10
+      puts "set the session id #{ session[:user_id] }"
       redirect_to root_path
     else
       flash[:error] = "Invalid email or password"

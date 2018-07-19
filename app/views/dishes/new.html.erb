@@ -1,0 +1,16 @@
+<h1>New Dish</h1>
+
+
+<%= form_for @dish do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name, :autofocus => true %>
+
+  <%= f.label :Image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :Category %>
+  <%= f.text_field :category_id%>
+
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,89 @@
+<div class="content content-fluid">
+
+<br/>
+
+</br/>
+<h1>New Restaurant</h1>
+<br/>
+
+</br/>
+<%= form_for @restaurant do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+    <%= f.label :Name %>
+    </div>
+    <div class="col-md-3">
+    <%= f.text_field :name, :autofocus => true %>
+    </div>
+
+  </div>
+</br/>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.label :Image %>
+  </div>
+  <div class="col-md-3">
+    <%= f.text_field :image %>
+  </div>
+
+</div>
+</br/>
+
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.label :Nationality %>
+  </div>
+  <div class="col-md-3">
+    <%= f.text_field :nationality%>
+  </div>
+
+</div>
+</br/>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.label :Website %>
+  </div>
+  <div class="col-md-3">
+    <%= f.text_field :website%>
+  </div>
+
+</div>
+</br/>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.label :Address %>
+  </div>
+  <div class="col-md-3">
+    <%= f.text_field :address%>
+  </div>
+
+</div>
+</br/>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.label :Phone %>
+  </div>
+  <div class="col-md-3">
+    <%= f.text_field :phone%>
+  </div>
+
+</div>
+</br/>
+
+
+
+
+
+  <%= f.submit %>
+<% end %>
+</div>

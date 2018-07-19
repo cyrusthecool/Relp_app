@@ -1,14 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This dile should contain all the record creation needed to seed the database with its dedault values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord od the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.dirst)
 
 User.destroy_all
-u1 = User.create :email => 'mikea@ga.co', :password => 'chicken'
-u2 = User.create :email => 'kyleb@ga.co', :password => 'chicken'
+u1 = User.create :email => 'mikea@ga.co', :password => 'chicken', :admin => 1
+u2 = User.create :email => 'kyleb@ga.co', :password => 'chicken', :admin => 0
 #
 Restaurant.destroy_all
 r1 = Restaurant.create :name => "China Doll"
@@ -31,28 +31,30 @@ c4 = Category.create :name => 'Grill'
 c5 = Category.create :name => 'Tapas'
 
 Dish.destroy_all
-f1 = Dish.create :name => "Dumpling"
-f2 = Dish.create :name => "Laksa"
-f3 = Dish.create :name => "Garlic Prawn"
-f4 = Dish.create :name => "Ginger Swordfish"
-f5 = Dish.create :name => "Calamares a la Romana"
-f6 = Dish.create :name => "Tortilla"
+d1 = Dish.create :name => "Dumpling"
+d2 = Dish.create :name => "Laksa"
+d3 = Dish.create :name => "Garlic Prawn"
+d4 = Dish.create :name => "Ginger Swordfish"
+d5 = Dish.create :name => "Calamares a la Romana"
+d6 = Dish.create :name => "Tortilla"
 #
 #
 # ## Associations ################################################################
-# # foodss and restaurants
-# f1.restaurants << r1
-# f2.restaurants << r2
-# f3.restaurants << r3
-# f4.restaurants << r4
-#
-# # nationalities and restaurants
-# n1.restaurants << r1
-# n2.restaurants << r2
-# n3.restaurants << r3
-# n4.restaurants << r4
-#
-# # categories and restaurants
+# foodss and restaurants
+d1.restaurants << r1
+d2.restaurants << r2
+d3.restaurants << r3
+d4.restaurants << r4
+
+# nationalities and restaurants
+n1.restaurants << r1
+n2.restaurants << r2
+n3.restaurants << r3
+n4.restaurants << r4
+
+c1.dishes << d1
+
+# categories and restaurants
 # r1.categories << c1 << c2
 # r2.categories << c3
 # r3.categories << c4 << c5

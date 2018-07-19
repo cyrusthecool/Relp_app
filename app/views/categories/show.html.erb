@@ -4,3 +4,17 @@
 <%= image_tag @category.image, :class => 'feature' unless @category.image.nil? %>
 
   <p>Details: <%= @category.detail %></p>
+
+  <% @category.restaurants.each do |restaurant| %>
+    <p>
+    <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+    </p>
+  <% end %>
+
+
+<% if @current_user.present? && @current_user.admin? %>
+  <div class="controls">
+    <%= link_to "Edit category", edit_category_path(@category) %>
+    <%= link_to "Delete category", category_path(@category), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  </div>
+  <% end %>
